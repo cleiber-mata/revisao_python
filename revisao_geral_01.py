@@ -12,12 +12,12 @@ while resposta == "S":
     mensalidade_usuario = float(input("Digite o valor da mensalidade: "))
     meses_ativos = int(input("Digite a quantidade de meses ativos: ")) 
 
-    faturamento = calcular_faturamento(mensalidade_usuario, meses_ativos)
+    faturamento_usuario = calcular_faturamento(mensalidade_usuario, meses_ativos)
 
     cliente_data = {
         "nome": nome_usuario,
         "email": email_usuario,
-        "faturamento": faturamento
+        "faturamento": faturamento_usuario
         
     }
 
@@ -25,7 +25,7 @@ while resposta == "S":
     for chave, valor in cliente_data.items():
         print(f"{chave.capitalize()}: {valor}")
 
-    if faturamento >= 500:
+    if faturamento_usuario >= 500:
         print(f"nome: {cliente_data['nome']}: CLIENTE VIP - SUPORTE PREMIUM CORRESPONDENTE")
     else:
         print(f"nome: {cliente_data['nome']}: CLIENTE PADRÃO - SUPORTE BÁSICO")

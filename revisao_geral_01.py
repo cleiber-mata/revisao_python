@@ -13,7 +13,7 @@ while resposta == "S":
     nome_usuario = input("Digite o nome do usuário: ").strip().title()
     email_usuario = input("Digite o e-mail do usuário: ").strip().lower()
     mensalidade = float(input("Digite o valor da mensalidade: "))
-    meses_artivos = int(input("Digite a quantidade de meses ativos: "))
+    meses_ativos = int(input("Digite a quantidade de meses ativos: "))
 
     faturamento, manutencao = calcular_faturamento()
 
@@ -27,10 +27,10 @@ while resposta == "S":
     for chave, valor in cliente_data.items():
         print(f"{chave.capitalize()}: {valor}")
     if faturamento >= 500:
-        print(f"Faturamento Líquido: R$ {cliente_data['faturamento_liquido']:.2f} (CLIENTE VIP - SUPORTE PREMIUM CORRESPONDENTE)")
+        print(f"nome: {cliente_data['nome']}: CLIENTE VIP - SUPORTE PREMIUM CORRESPONDENTE")
     else:
-        print(f"Faturamento Líquido: R$ {cliente_data['faturamento_liquido']:.2f} (CLIENTE PADRÃO - SUPORTE BÁSICO)")
+        print(f"nome: {cliente_data['nome']}: CLIENTE PADRÃO - SUPORTE BÁSICO")
 
-    resposta = input("Deseja cadastrar outro cliente (S/N)? ").strip().upper()
+    resposta = input("\nDeseja cadastrar outro cliente (S/N)? ").strip().upper()
 
 print("\nEncerrando o programa. Obrigado!\n")
